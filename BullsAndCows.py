@@ -376,7 +376,7 @@ root = Tk()
 root.title('Главное меню')
 root.geometry('913x580+300+100')
 
-root.image = PhotoImage(file='123/back1.png')
+root.image = PhotoImage(file='back1.png')
 bg_logo = Label(root, image=root.image)
 bg_logo.place(x=0, y=0, relwidth=1, relheight=1)
 
