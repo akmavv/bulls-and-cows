@@ -1,19 +1,17 @@
 from tkinter import *
 import random
 
-
 def exit_game():
     root.destroy()
 
-
 def open_difficulty_window():
-    root.withdraw()
+    root.withdraw()  
     difficulty_window = Toplevel()
     difficulty_window.title('Выбор уровня сложности')
     difficulty_window.geometry('913x580+300+100')
     difficulty_window.resizable(0, 0)
 
-    difficulty_window.image = PhotoImage(file='back2.png')
+    difficulty_window.image = PhotoImage(file='экрформа2.png')
     bg_logo = Label(difficulty_window, image=difficulty_window.image)
     bg_logo.place(x=0, y=0, relwidth=1, relheight=1)
 
@@ -30,26 +28,24 @@ def open_difficulty_window():
     back_button.pack(side='bottom')
     back_button.place(relx=0.5, rely=0.94, anchor=CENTER)
 
-
 def go_back(window):
     window.destroy()
-    root.deiconify()
-
+    root.deiconify()  
 
 def open_new_window(previous_window):
-    previous_window.destroy()
+    previous_window.destroy()  
     new_window = Toplevel()
-    new_window.title('Уровень 1')
+    new_window.title('Уровень 1') 
     new_window.geometry('913x580+300+100')
     new_window.resizable(0, 0)
 
-    new_window.image = PhotoImage(file='back5.png')
+    new_window.image = PhotoImage(file='экрформа5.png')
     bg_logo = Label(new_window, image=new_window.image)
     bg_logo.place(x=0, y=0, relwidth=1, relheight=1)
 
     def generate_secret_number():
         number_set = set('0123456789')
-        first_digit = str(random.choice([i for i in range(1, 10)]))
+        first_digit = str(random.choice([i for i in range(1, 10)]))  # Число не начинается с нуля
         number_set.remove(first_digit)
         secret_number = first_digit
         for i in range(3):
@@ -194,24 +190,23 @@ def open_new_window(previous_window):
                                  font=('Comic Sans MS', 20), command=lambda: go_back_to_main(new_window), width=18)
     back_to_main_button.place(relx=0.17, rely=0.90, anchor=CENTER)
 
-    reset_button = Button(new_window, text='Начать сначала', bg='lightpink2', fg='salmon4',
+    reset_button = Button(new_window, text='Начать сначала', bg='salmon4', fg='lightpink2',
                           font=('Comic Sans MS', 20), command=reset_game, width=18)
     reset_button.place(relx=0.17, rely=0.76, anchor=CENTER)
 
 
-def go_back_to_main(window):
-    window.destroy()
-    root.deiconify()
 
+def go_back_to_main(window):
+    window.destroy()  # Закрываем текущее окно
+    root.deiconify()  # Показываем главное окно
 
 def open_new_window_2(previous_window):
-    previous_window.destroy()
     new_window_2 = Toplevel()
-    new_window_2.title('Уровень 2')
+    new_window_2.title('Уровень 2') #Уровень2
     new_window_2.geometry('913x580+300+100')
     new_window_2.resizable(0, 0)
 
-    new_window_2.image = PhotoImage(file='back5.png')
+    new_window_2.image = PhotoImage(file='экрформа5.png')
     bg_logo = Label(new_window_2, image=new_window_2.image)
     bg_logo.place(x=0, y=0, relwidth=1, relheight=1)
 
@@ -237,7 +232,7 @@ def open_new_window_2(previous_window):
             show_error_window("Пожалуйста, введите пятизначное число.")
             return False
         if number.startswith('0'):
-            show_error_window("Число должно начинаться не с нуля.")
+            show_error_window("Число не должно начинаться с нуля.")
             return False
         if len(set(number)) < 5:
             show_error_window("Цифры в числе не должны повторяться.")
@@ -355,28 +350,30 @@ def open_new_window_2(previous_window):
 
     for idx in range(15):
         move_counter_labels[idx].place(relx=0.39, rely=0.17 + idx * 0.05, anchor=NW)
-        bulls_labels[idx].place(relx=0.66, rely=0.17 + idx * 0.05, anchor=NW)
-        cows_labels[idx].place(relx=0.86, rely=0.17 + idx * 0.05, anchor=NW)
+        bulls_labels[idx].place(relx=0.67, rely=0.17 + idx * 0.05, anchor=NW)
+        cows_labels[idx].place(relx=0.87, rely=0.17 + idx * 0.05, anchor=NW)
+
+
 
     back_to_main_button = Button(new_window_2, text='Главное меню', bg='salmon4', fg='lightpink2',
                                  font=('Comic Sans MS', 20), command=lambda: go_back_to_main(new_window_2), width=18)
     back_to_main_button.place(relx=0.17, rely=0.90, anchor=CENTER)
 
-    reset_button = Button(new_window_2, text='Начать сначала', bg='lightpink2', fg='salmon4',
+    reset_button = Button(new_window_2, text='Начать сначала', bg='salmon4', fg='lightpink2',
                           font=('Comic Sans MS', 20), command=reset_game, width=18)
     reset_button.place(relx=0.17, rely=0.76, anchor=CENTER)
 
 
 def go_back_to_main(window):
-    window.destroy()
-    root.deiconify()
+    window.destroy()  
+    root.deiconify() 
 
 
 root = Tk()
-root.title('Главное меню')
+root.title('Быки и коровы')
 root.geometry('913x580+300+100')
 
-root.image = PhotoImage(file='123/back1.png')
+root.image = PhotoImage(file='экрформа1.png')
 bg_logo = Label(root, image=root.image)
 bg_logo.place(x=0, y=0, relwidth=1, relheight=1)
 
