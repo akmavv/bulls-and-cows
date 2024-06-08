@@ -5,7 +5,6 @@ import random
 def exit_game():
     root.destroy()
 
-# gfftfhgh
 
 def open_difficulty_window():
     root.withdraw()
