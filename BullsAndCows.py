@@ -4,8 +4,7 @@ import random
 
 def exit_game():
     root.destroy()
-
-#fghjk 
+ 
 def open_difficulty_window():
     root.withdraw()
     difficulty_window = Toplevel()
