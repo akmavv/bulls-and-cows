@@ -1,7 +1,6 @@
 from tkinter import *
 import random
 
-
 def exit_game():
     root.destroy()
 
