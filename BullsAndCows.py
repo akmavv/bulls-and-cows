@@ -11,7 +11,7 @@ def open_difficulty_window():
     difficulty_window.geometry('913x580+300+100')
     difficulty_window.resizable(0, 0)
 
-    difficulty_window.image = PhotoImage(file='back2.png')
+    difficulty_window.image = PhotoImage(file='back22.png')
     bg_logo = Label(difficulty_window, image=difficulty_window.image)
     bg_logo.place(x=0, y=0, relwidth=1, relheight=1)
 
