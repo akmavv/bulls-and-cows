@@ -61,7 +61,7 @@ def open_new_window(previous_window):
 
     history = []
     move_counter = 1
-    remaining_attempts = 10
+    remaining_attempts = 15
 
     def check_input_number(number):
         if len(number) != 4 or not number.isdigit():
@@ -112,11 +112,11 @@ def open_new_window(previous_window):
         for idx, (guess, bulls, cows, move) in enumerate(history):
             history_label = guess_labels[idx]
             history_label.config(text=f'{guess} ')
-            history_label.place(relx=0.48, rely=0.17 + idx * 0.07, anchor=NW)
+            history_label.place(relx=0.48, rely=0.17 + idx * 0.05, anchor=NW)
 
             move_counter_label = move_counter_labels[idx]
             move_counter_label.config(text=str(move))
-            move_counter_label.place(relx=0.39, rely=0.17 + idx * 0.07, anchor=NW)
+            move_counter_label.place(relx=0.39, rely=0.17 + idx * 0.05, anchor=NW)
 
         for idx, (guess, bulls, cows, move) in enumerate(history):
             bulls_labels[idx].config(text=str(bulls))
@@ -135,7 +135,7 @@ def open_new_window(previous_window):
         nonlocal move_counter, secret_number, history, remaining_attempts
         move_counter = 1
         secret_number = generate_secret_number()
-        remaining_attempts = 10
+        remaining_attempts = 15
         history.clear()
         result_label.config(text='')
         attempts_label.config(text=f'Осталось попыток: {remaining_attempts}')
@@ -179,15 +179,15 @@ def open_new_window(previous_window):
                            bg='snow')
     attempts_label.place(relx=0.02, rely=0.02, anchor=NW)
 
-    move_counter_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(10)]
-    bulls_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(10)]
-    cows_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(10)]
-    guess_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(10)]
+    move_counter_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(15)]
+    bulls_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(15)]
+    cows_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(15)]
+    guess_labels = [Label(new_window, text='', font=('Comic Sans MS', 16), bg='snow') for _ in range(15)]
 
-    for idx in range(10):
-        move_counter_labels[idx].place(relx=0.39, rely=0.17 + idx * 0.07, anchor=NW)
-        bulls_labels[idx].place(relx=0.67, rely=0.2 + idx * 0.07, anchor=CENTER)
-        cows_labels[idx].place(relx=0.87, rely=0.2 + idx * 0.07, anchor=CENTER)
+    for idx in range(15):
+        move_counter_labels[idx].place(relx=0.39, rely=0.17 + idx * 0.05, anchor=NW)
+        bulls_labels[idx].place(relx=0.66, rely=0.17 + idx * 0.05, anchor=NW)
+        cows_labels[idx].place(relx=0.86, rely=0.17 + idx * 0.05, anchor=NW)
 
     back_to_main_button = Button(new_window, text='Главное меню', bg='salmon4', fg='lightpink2',
                                  font=('Comic Sans MS', 20), command=lambda: go_back_to_main(new_window), width=18)
