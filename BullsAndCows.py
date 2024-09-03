@@ -215,7 +215,7 @@ def open_new_window_2(previous_window):
 
     def generate_secret_number():
         number_set = set('0123456789')
-        first_digit = str(random.choice([i for i in range(1, 10)]))  # Число не начинается с нуля
+        first_digit = str(random.choice([i for i in range(1, 10)]))  
         number_set.remove(first_digit)
         secret_number = first_digit
         for i in range(4):
